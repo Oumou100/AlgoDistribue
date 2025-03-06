@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         Topology tp = new Topology();
-        tp.setDefaultNodeModel(LonerMessageBased.class);
+        tp.setDefaultNodeModel(LonerGraphBased.class);
         new JViewer(tp);
         tp.start();
     }
