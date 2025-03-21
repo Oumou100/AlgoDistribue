@@ -8,21 +8,27 @@ public class LonerGraphBased extends Node {
     @Override
     public void onStart() {
         if(getNeighbors().isEmpty()) {
-            setColor(Color.green);
+            setColor(Color.blue);
         }else {
-            setColor(Color.red);
+            setColor(Color.yellow);
         }
     }
 
     @Override
+    public void onClock(){ //Le temps necessaire pour effectuer un round(temps necessaire pour envoyer, recevoir, traitement)
+        move(2); // deplacer d'un pixel
+        wrapLocation(); //Revenir
+    }
+
+    @Override
     public void onLinkAdded(Link link) {
-        setColor(Color.red);
+        setColor(Color.blue);
     }
 
     @Override
     public void onLinkRemoved(Link link) {
         if(getNeighbors().isEmpty()) {
-            setColor(Color.green);
+            setColor(Color.yellow);
         }
     }
 }

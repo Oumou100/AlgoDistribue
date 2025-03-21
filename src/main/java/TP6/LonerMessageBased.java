@@ -8,18 +8,27 @@ public class LonerMessageBased extends Node {
     private boolean heardSomeone = false;
 
     @Override
+    public void onStart() {
+        setColor(null);
+        setDirection(Math.random() * 2 * Math.PI);
+        heardSomeone =false;
+    }
+    @Override
     public void onClock(){
-        if(heardSomeone) {
-            setColor(Color.red);
-        }else {
-            setColor(Color.green);
-        }
-        heardSomeone = false;
+            move(4*Math.random()); // deplacer d'un pixel
+            wrapLocation();
         sendAll(new Message());
+
+        if(getLinks().isEmpty()){
+            setColor(Color.blue);
+            heardSomeone = false;
+        }
     }
 
     @Override
     public void onMessage(Message message) {
         heardSomeone = true;
+        setColor(Color.yellow);
+
     }
 }

@@ -19,7 +19,7 @@ public class MyCentralizedAlgorithm implements ClockListener, TopologyListener, 
     @Override
     public void onClock() {
         if(tp.getTime() % 100 == 0) {
-            System.out.println("It is" + tp.getTime() + " o'clock");
+            System.out.println("It is" + tp.getTime()/100 + " o'clock");
         }
     }
 
@@ -35,7 +35,7 @@ public class MyCentralizedAlgorithm implements ClockListener, TopologyListener, 
 
     @Override
     public void onNodeAdded(Node node) {
-        System.out.println("Hi " + node);
+        System.out.println("Hi " + node+ node.getID());
     }
 
     @Override
