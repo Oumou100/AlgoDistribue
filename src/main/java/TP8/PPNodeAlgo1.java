@@ -1,12 +1,16 @@
 package TP8;
 
 import io.jbotsim.core.Color;
+import io.jbotsim.core.Link;
 import io.jbotsim.core.Node;
 
 public class PPNodeAlgo1 extends PPNode{
     @Override
     public void onStart() {
         setColor(Color.blue);
+        for(Link link : this.getLinks()) {
+            link.setWidth(1);
+        }
     }
     @Override
     public void onSelection() {

@@ -7,6 +7,7 @@ import io.jbotsim.core.event.ClockListener;
 import io.jbotsim.core.event.ConnectivityListener;
 import io.jbotsim.core.event.TopologyListener;
 
+//Si dans toute la topologie on veut appliquer une seule chose
 public class MyCentralizedAlgorithm implements ClockListener, TopologyListener, ConnectivityListener {
 
     private Topology tp;
